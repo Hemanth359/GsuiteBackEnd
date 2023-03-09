@@ -29,7 +29,7 @@ exports.login = ({ username, password }) => {
 
 exports.getToken = ({ username, password }) => {
 	console.log("hi")
-	const privateKey = fs.readFileSync('C:/Users/NITHIN REDDY SEELAM/Downloads/pem/pem/private.key');
+	const privateKey = fs.readFileSync('app/helpers/private.key');
 	console.log("äfter pem")
 	return new Promise(async (resolve, reject) => {
 		console.log("checking for user:")
@@ -55,7 +55,7 @@ exports.getToken = ({ username, password }) => {
 
 exports.authorizeToken = async (req, res, next) => {
 	// Get the token from the request headers
-	const publicKey = fs.readFileSync('C:/Users/NITHIN REDDY SEELAM/Downloads/pem/pem/public.key');
+	const publicKey = fs.readFileSync('app/helpers/public.key');
 	//const token = req.headers.authorization;
 	const provider=req.headers.provider;
 
